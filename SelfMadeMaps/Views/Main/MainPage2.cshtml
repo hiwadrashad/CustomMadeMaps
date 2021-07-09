@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<style>
+    #map {
+    height: 400px;
+    width: 600px;
+    }
+</style>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script>
+        let map;
+
+
+        function initMap() {
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+                mapId: '7cce0b3e2f0704c4'
+
+            }
+            );
+           
+            new google.maps.Marker({
+                lat: -34.397,
+                lng: 150.644 
+            });
+            //var noPoi = [{
+            //    featureType: "poi",
+            //    elementType: "labels",
+
+            //    stylers: [{
+            //        visibility: "off"
+            //    }]
+            //}];
+
+            //map.setOptions({ styles: noPoi });
+        }
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfs_NTYCL-LzdfO7vcgqus-lQLR78ScMw&callback=initMap&libraries=&v=weekly"
+            async></script>
+</body>
+</html>
